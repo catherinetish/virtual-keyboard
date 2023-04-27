@@ -1,0 +1,29 @@
+.container{
+   margin: 0 auto;
+   width: 700px;
+   background-color: bisque;
+}
+.keyboard-textarea{
+   width: 700px;
+   height: 200px;
+   font-size: 18px;
+   color: #444444;
+}
+.keyboard{
+   width: 100%;
+   background-color: #afafaf;
+   padding: 5px;
+
+   &__row{
+      display: flex;
+      height: 40px;
+      gap: 5px;
+   }
+
+   &__key{
+      min-height: 40px;
+      width: 100px;
+      background-color: #fff;
+   }
+
+}
