@@ -1,18 +1,22 @@
 .container{
    margin: 0 auto;
    width: 700px;
-   background-color: bisque;
 }
+
 .keyboard-textarea{
    width: 700px;
    height: 200px;
    font-size: 18px;
    color: #444444;
 }
+
 .keyboard{
+   display: flex;
+   flex-direction: column;
    width: 100%;
    background-color: #afafaf;
    padding: 5px;
+   gap: 5px;
 
    &__row{
       display: flex;

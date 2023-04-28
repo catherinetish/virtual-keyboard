@@ -1,7 +1,6 @@
 .container {
   margin: 0 auto;
   width: 700px;
-  background-color: bisque;
 }
 
 .keyboard-textarea {
@@ -12,9 +11,12 @@
 }
 
 .keyboard {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   background-color: #afafaf;
   padding: 5px;
+  gap: 5px;
 }
 .keyboard__row {
   display: flex;
