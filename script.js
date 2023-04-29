@@ -59,7 +59,7 @@ let desc = document.createElement('p');
 desc.innerHTML = 'Клавиатура создана в операционной системе Windows';
 createContainer.append(desc);
 
-
+outputField.focus();
 
 //create keys
 
@@ -96,15 +96,20 @@ outputField.onkeydown = outputField.onkeyup = function(event){
 
 keyboard.onclick = function(event){
    // let clickedKey = event.target.className;
+   //outputField.innerText = `${event.target.innerHTML}`;
+   if(!(event.target.className =='keyboard')&&(!(event.target.className =='keyboard__row'))){
+      outputField.value += `${event.target.innerHTML}`; //добавляет значения в
+   }
 
-   // console.log(event.target.className);
-
-   console.log(event.type);
+   console.log(event.target.className);
 }
 
 //смена внешнего вида кнопок по нажатию на экране
 keyboard.onmousedown = function(event){
-   event.target.style.borderRadius = '100px';
+   if(!(event.target.className =='keyboard')){
+      event.target.style.borderRadius = '100px';
+   }
+
 }
 keyboard.onmouseup = function(event){
    event.target.style.borderRadius = '3px';
