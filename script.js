@@ -92,3 +92,20 @@ outputField.onkeydown = outputField.onkeyup = function(event){
       }
    }
 }
+
+
+keyboard.onclick = function(event){
+   // let clickedKey = event.target.className;
+
+   // console.log(event.target.className);
+
+   console.log(event.type);
+}
+
+//смена внешнего вида кнопок по нажатию на экране
+keyboard.onmousedown = function(event){
+   event.target.style.borderRadius = '100px';
+}
+keyboard.onmouseup = function(event){
+   event.target.style.borderRadius = '3px';
+}
