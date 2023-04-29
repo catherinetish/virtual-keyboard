@@ -7,10 +7,6 @@ function Key(keyName, keyCode) {
 }
 
 let firstRow = [];
-// firstRow.push(new Key('`', '192'), new Key('1', '49'), new Key('2','50'), new Key('3','51'), new Key('4','52'),
-//               new Key('5','53'), new Key('6','54'), new Key('7','55'), new Key('8','56'), new Key('9','57'),
-//               new Key('0','48'), new Key('-','189'), new Key('=','187'), new Key('Backspace','8')
-// );
 firstRow.push(new Key('`', 'Backquote'), new Key('1', 'Digit1'), new Key('2','Digit2'), new Key('3','Digit3'), new Key('4','Digit4'),
               new Key('5','Digit5'), new Key('6','Digit6'), new Key('7','Digit7'), new Key('8','Digit8'), new Key('9','Digit9'),
               new Key('0','Digit0'), new Key('-','Minus'), new Key('=','Equal'), new Key('Backspace','Backspace')
@@ -58,6 +54,12 @@ createContainer.append(outputField);
 let keyboard = document.createElement('div');
 keyboard.className = 'keyboard';
 createContainer.append(keyboard);
+
+let desc = document.createElement('p');
+desc.innerHTML = 'Клавиатура создана в операционной системе Windows';
+createContainer.append(desc);
+
+
 
 //create keys
 

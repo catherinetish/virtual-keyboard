@@ -1,32 +1,39 @@
 .container{
    margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
    width: 700px;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .keyboard-textarea{
    width: 700px;
    height: 200px;
    font-size: 18px;
+   margin: 20px 0;
    color: #444444;
+   border-radius: 6px;
 }
 
 .keyboard{
    display: flex;
    flex-direction: column;
-   width: 100%;
    background-color: #afafaf;
-   padding: 5px;
+   padding: 10px;
    gap: 5px;
+   border-radius: 6px;
 
    &__row{
       display: flex;
       height: 40px;
       gap: 5px;
+      justify-content: center;
    }
 
    &__key{
       min-height: 40px;
-      width: 100px;
+      width: 40px;
       background-color: #fff;
       line-height: 40px;
       text-align: center;
@@ -34,6 +41,22 @@
       background: #6b6b6b;
       border-radius: 3px;
       cursor: pointer;
+
+      &.Space{
+         width: 326px;
+      }
+      &.Backspace, &.CapsLock, &.ShiftLeft {
+         width: 100px;
+      }
+      &.Tab {
+         width: 50px;
+      }
+      &.Delete{
+         width: 44px;
+      }
+      &.Enter, &.ShiftRight {
+         width: 86px;
+      }
    }
 
 }
