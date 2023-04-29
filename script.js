@@ -7,9 +7,13 @@ function Key(keyName, keyCode) {
 }
 
 let firstRow = [];
-firstRow.push(new Key('`', '192'), new Key('1', '49'), new Key('2','50'), new Key('3','51'), new Key('4','52'),
-              new Key('5','53'), new Key('6','54'), new Key('7','55'), new Key('8','56'), new Key('9','57'),
-              new Key('0','48'), new Key('-','189'), new Key('=','187'), new Key('Backspace','8')
+// firstRow.push(new Key('`', '192'), new Key('1', '49'), new Key('2','50'), new Key('3','51'), new Key('4','52'),
+//               new Key('5','53'), new Key('6','54'), new Key('7','55'), new Key('8','56'), new Key('9','57'),
+//               new Key('0','48'), new Key('-','189'), new Key('=','187'), new Key('Backspace','8')
+// );
+firstRow.push(new Key('`', 'Backquote'), new Key('1', 'Digit1'), new Key('2','Digit2'), new Key('3','Digit3'), new Key('4','Digit4'),
+              new Key('5','Digit5'), new Key('6','Digit6'), new Key('7','Digit7'), new Key('8','Digit8'), new Key('9','Digit9'),
+              new Key('0','Digit0'), new Key('-','Minus'), new Key('=','Equal'), new Key('Backspace','Backspace')
 );
 
 let secondRow = [];
@@ -64,8 +68,25 @@ for (let i=0; i<=keys.length-1; i++){
 
       for(let key of keys[i]){
          let keyboardKey = document.createElement('div');
-         keyboardKey.className = 'keyboard__key';
+         keyboardKey.className = 'keyboard__key' + ` ${key.keyCode}`;
          keyboardKey.innerHTML = `${key.keyName}`;
          row.append(keyboardKey);
       }
+}
+
+//нажатие на клавишу на клавиатуре выделяет нажатую клавишу цветом
+outputField.onkeydown = outputField.onkeyup = function(event){
+
+   for (let i=0; i<=keys.length-1; i++){
+      for(let key of keys[i]){
+
+         if(event.code == key.keyCode){
+
+            let codeOfKey = '.'+ key.keyCode;
+            let choosenKey = document.querySelector(codeOfKey);
+
+            choosenKey.classList.toggle('keyDown');
+         }
+      }
+   }
 }
