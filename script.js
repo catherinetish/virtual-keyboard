@@ -17,26 +17,27 @@ firstRow.push(new Key('`', 'Backquote'), new Key('1', 'Digit1'), new Key('2','Di
 );
 
 let secondRow = [];
-secondRow.push(new Key('Tab', '9'), new Key('q', '81'), new Key('w','87'), new Key('e','69'), new Key('r','82'),
-               new Key('t','84'), new Key('y','89'), new Key('u','85'), new Key('i','73'), new Key('o','79'),
-               new Key('p','80'), new Key('[','219'), new Key(']','221'), new Key('\/','220'), new Key('Del','46')
+secondRow.push(new Key('Tab', 'Tab'), new Key('q', 'KeyQ'), new Key('w','KeyW'), new Key('e','KeyE'), new Key('r','KeyR'),
+               new Key('t','KeyT'), new Key('y','KeyY'), new Key('u','KeyU'), new Key('i','KeyI'), new Key('o','KeyO'),
+               new Key('p','KeyP'), new Key('[','BracketLeft'), new Key(']','BracketRight'), new Key('\/','Backslash'), new Key('Del','Delete')
 );
 
 let thirdRow = [];
-thirdRow.push(new Key('CapsLock', '20'), new Key('a', '65'), new Key('s','83'), new Key('d','68'), new Key('f','70'),
-               new Key('g','71'), new Key('h','72'), new Key('j','74'), new Key('k','75'), new Key('l','76'),
-               new Key(';','186'), new Key('\'','222'), new Key('Enter','13')
+thirdRow.push(new Key('CapsLock', 'CapsLock'), new Key('a', 'KeyA'), new Key('s','KeyS'), new Key('d','KeyD'), new Key('f','KeyF'),
+               new Key('g','KeyG'), new Key('h','KeyH'), new Key('j','KeyJ'), new Key('k','KeyK'), new Key('l','KeyL'),
+               new Key(';','Semicolon'), new Key('\'','Quote'), new Key('Enter','Enter')
 );
 
 let fourthRow = [];
-fourthRow.push(new Key('Shift', '16'), new Key('z', '90'), new Key('x','88'), new Key('c','67'), new Key('v','86'),
-               new Key('b','66'), new Key('n','78'), new Key('m','77'), new Key(',','188'), new Key('.','190'),
-               new Key('/','191'), new Key('▲','38'), new Key('Shift','16')
+fourthRow.push(new Key('Shift', 'ShiftLeft'), new Key('z', 'KeyZ'), new Key('x','KeyX'), new Key('c','KeyC'), new Key('v','KeyV'),
+               new Key('b','KeyB'), new Key('n','KeyN'), new Key('m','KeyM'), new Key(',','Comma'), new Key('.','Period'),
+               new Key('/','Slash'), new Key('▲','ArrowUp'), new Key('Shift','ShiftRight')
 );
 
 let fithRow = [];
-fithRow.push(new Key('Ctrl', '17'), new Key('Win', '91'), new Key('Alt','18'), new Key('Space','32'), new Key('Alt','18'),
-               new Key('◄','37'), new Key('▼','40'), new Key('►','39'), new Key('Ctrl','17')
+fithRow.push(new Key('Ctrl', 'ControlLeft'), new Key('Win', 'MetaLeft'), new Key('Alt','AltLeft'), new Key('Space','Space'),
+             new Key('Alt','AltRight'), new Key('◄','ArrowLeft'), new Key('▼','ArrowDown'), new Key('►','ArrowRight'),
+             new Key('Ctrl','ControlRight')
 );
 
 keys.push(firstRow, secondRow, thirdRow, fourthRow, fithRow);
@@ -76,7 +77,6 @@ for (let i=0; i<=keys.length-1; i++){
 
 //нажатие на клавишу на клавиатуре выделяет нажатую клавишу цветом
 outputField.onkeydown = outputField.onkeyup = function(event){
-
    for (let i=0; i<=keys.length-1; i++){
       for(let key of keys[i]){
 
